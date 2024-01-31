@@ -210,7 +210,7 @@ resource "aws_ecs_task_definition" "pc_task_definition" {
         },
         {
           name  = "CONFIG_DATA"
-          value = "<>"}
+          value = "<>"} # Add your value.
       ]
       mountPoints     = [
         {
