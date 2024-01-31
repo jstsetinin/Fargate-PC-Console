@@ -10,7 +10,7 @@ Prequisitions: you should have permission to create Fargate resources in AWS + a
 2. Run the script and wait until the resources will be created.
 
 **Deploying Task Definition and Service.** ()
-1. Go to line 145 and uncomment code.
+1. Go to line 145 and uncomment the code below.
 2. Change the data to your VPC and SUBNET ID.
 3. Generate the Task Definition json file using the following documentation and change the values in "container_definitions = jsonencode"  (https://docs.prismacloud.io/en/compute-edition/30/admin-guide/install/deploy-console/console-on-fargate#create-task-definition)
 4. Apply script. (Bear in mind that the container needs an internet connection in order to pull images from the registry. Also you can provide the image localy. If you are getting the 'timeout' error during pulling the image, please fix the internet connection between the container and the registy. As a test you can add 0.0.0.0/0 network to the firewall and check if the timeout error still persists.)
