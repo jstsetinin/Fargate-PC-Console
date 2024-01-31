@@ -43,19 +43,19 @@ resource "aws_efs_file_system" "prisma_cloud_efs" {
 # Replace with the IDs of your VPC and security group
 resource "aws_efs_mount_target" "prisma_cloud_mount_target_1" {
   file_system_id  = aws_efs_file_system.prisma_cloud_efs.id
-  subnet_id       = "<VPC_ID>"
+  subnet_id       = "<SUBNET_ID>"
   security_groups = [aws_security_group.prisma_cloud_security_group.id]
 }
 
 resource "aws_efs_mount_target" "prisma_cloud_mount_target_2" {
   file_system_id  = aws_efs_file_system.prisma_cloud_efs.id
-  subnet_id       = "subnet-021a75bd634d1e1ca"
+  subnet_id       = "<SUBNET_2_ID>"
   security_groups = [aws_security_group.prisma_cloud_security_group.id]
 }
 
 resource "aws_efs_mount_target" "prisma_cloud_mount_target_3" {
   file_system_id  = aws_efs_file_system.prisma_cloud_efs.id
-  subnet_id       = "<VPC_ID>"
+  subnet_id       = "<SUBNET_3_ID>"
   security_groups = [aws_security_group.prisma_cloud_security_group.id]
 }
 
@@ -103,15 +103,15 @@ resource "aws_lb" "pc_ecs_nlb" {
   enable_deletion_protection = false
 
   subnet_mapping {
-    subnet_id = "<VPC_ID1>"  # Replace with your subnet ID
+    subnet_id = "<SUBNET_ID>"  # Replace with your subnet ID
   }
 
   subnet_mapping {
-    subnet_id = "<VPC_ID2>"  # Replace with your subnet ID
+    subnet_id = "<SUBNET_2_ID>"  # Replace with your subnet ID
   }
 
   subnet_mapping {
-    subnet_id = "<VPC_ID3>"  # Replace with your subnet ID
+    subnet_id = "<SUBNET_3_ID>"  # Replace with your subnet ID
   }
 
   enable_cross_zone_load_balancing = true
@@ -140,7 +140,7 @@ resource "aws_lb_listener" "listener_8084" {
   }
 }
 
-# Creating Task Difinition and Service
+# Creating Task Definition and Service
  
 /* Please uncomment this part when the initial setup was completed.
 
