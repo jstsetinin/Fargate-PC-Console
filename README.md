@@ -13,7 +13,7 @@ Prequisitions: you should have permission to create Fargate resources in AWS + a
 1. Go to line 145 and uncomment code.
 2. Change the data to your VPC and SUBNET ID.
 3. Generate the Task Definition json file using the following documentation and change the values in "container_definitions = jsonencode"  (https://docs.prismacloud.io/en/compute-edition/30/admin-guide/install/deploy-console/console-on-fargate#create-task-definition)
-4. 4. Apply script. (Bear in mind that the container needs an internet connection in order to pull images from the registry. Also you can provide the image localy. If you are getting the 'timeout' error during pulling the image, please fix the internet connection between the container and the registy. As a test you can add 0.0.0.0/0 network to the firewall and check if the timeout error still persists.)
+4. Apply script. (Bear in mind that the container needs an internet connection in order to pull images from the registry. Also you can provide the image localy. If you are getting the 'timeout' error during pulling the image, please fix the internet connection between the container and the registy. As a test you can add 0.0.0.0/0 network to the firewall and check if the timeout error still persists.)
   
 **Log into Prisma Cloud Console**
 Open a web browser and go to https://<Load balancer DNS name>:8083. Create an initial admin account, and then enter your license to activate Console.
